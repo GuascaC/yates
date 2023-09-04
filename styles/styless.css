@@ -1,0 +1,92 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header{
+  background-color: #660D1F;
+  padding: 1.5%;
+  display: flex;
+  margin-bottom: 6vh;
+}
+a{
+  color: white;
+}
+h1{
+  margin: 0 !important; 
+  line-height: 0.8;
+}
+.icons i{
+  font-size: 17px;
+  margin-right: 1vw;
+  color: white;
+}
+header h1{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.card{
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 70px #80808063;
+  padding: 3% 2%;
+}
+.card:hover{
+  box-shadow: 5px 5px 70px #808080a5;
+}
+.card h3{
+  line-height: 0;
+}
+.row{
+  display: flex;
+}
+.formInicio div div{
+  width: 40vw;
+  margin-left: 5vw;
+}
+.formInicio2 div div{
+  width: 40vw;
+  margin-bottom: 3vh;
+}
+.formInicio div input, .formInicio div select,
+.formInicio2 div input, .formInicio2 div select{
+  width: 80%;
+  height: 6vh;
+  margin-bottom: 3vh;
+}
+.formInicio div div img, .formInicio2 div div img{
+    cursor: pointer;
+  height: 3vh;
+}
+.button1{
+  background-color: #660D1F;
+  color: white;
+  border: none;
+  margin-top: 2vh;
+  padding: 1% 5%;
+}
+.button1:hover{
+  background-color: grey;
+  box-shadow: 5px 5px 70px #808080a5;
+}
+.Catalog{
+  width: 80vw;
+  margin: 0 auto;
+}
+.Catalog img{
+height: 20vh;
+width: 20vw;
+}
+.link{
+  color: darkblue;
+  margin-top: 50vh;
+}
+header div h1{
+  text-align: left;
+}
+.btn-primary{
+  background: #660D1F;
+  border-color: #660D1F;
+}
