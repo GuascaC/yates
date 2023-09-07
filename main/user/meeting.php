@@ -40,7 +40,6 @@
       window.location = '../../main/admin/001.php';
       </script>";*/
     }
-    }
 ?>
 
 
