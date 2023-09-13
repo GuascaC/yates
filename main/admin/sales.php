@@ -50,6 +50,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../styles/styless.css">
 </head>
@@ -86,6 +87,13 @@
         <a href="./special.php"><button class="btn btn-secondary">Especialidades</button></a>
     <section class="Catalog">  
     <h4>Ventas</h4>
+    <div class="card-body">
+    <div class="text-center mx-3 w-25 h-25 bg-successs rounded border-3">
+    <h2>Gráfico de barras sobre las ventas</h2>
+    <canvas id="myChart"></canvas>
+    </div>
+    </div>
+
     <div class="card text-start">
         <div class="card-body">
     <?php
@@ -170,5 +178,7 @@
   <footer>
   </footer>
   <script src="https://kit.fontawesome.com/0bf8ac12b9.js" crossorigin="anonymous"></script> <!--Link de conexión íconos-->
+  <script src="../../scripts/graphic.js"></script>
+
 </body>
 </html>
