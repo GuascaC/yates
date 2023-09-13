@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-09-2023 a las 15:51:26
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Host: 127.0.0.1
+-- Generation Time: Sep 13, 2023 at 10:06 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `yates`
+-- Database: `yates`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `accesories`
+-- Table structure for table `accesories`
 --
 
 CREATE TABLE `accesories` (
@@ -35,10 +35,10 @@ CREATE TABLE `accesories` (
   `price` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `accesories`
+-- Dumping data for table `accesories`
 --
 
 INSERT INTO `accesories` (`id`, `name`, `info`, `img`, `price`, `quantity`, `date`) VALUES
@@ -56,17 +56,17 @@ INSERT INTO `accesories` (`id`, `name`, `info`, `img`, `price`, `quantity`, `dat
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `brands`
+-- Table structure for table `brands`
 --
 
 CREATE TABLE `brands` (
   `id` int(11) NOT NULL,
   `brand` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `brands`
+-- Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`id`, `brand`, `date`) VALUES
@@ -90,16 +90,16 @@ INSERT INTO `brands` (`id`, `brand`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `documents`
+-- Table structure for table `documents`
 --
 
 CREATE TABLE `documents` (
   `id` int(11) NOT NULL,
   `type` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `documents`
+-- Dumping data for table `documents`
 --
 
 INSERT INTO `documents` (`id`, `type`) VALUES
@@ -112,16 +112,16 @@ INSERT INTO `documents` (`id`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `hour`
+-- Table structure for table `hour`
 --
 
 CREATE TABLE `hour` (
   `id` int(11) NOT NULL,
   `hour` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `hour`
+-- Dumping data for table `hour`
 --
 
 INSERT INTO `hour` (`id`, `hour`) VALUES
@@ -147,7 +147,7 @@ INSERT INTO `hour` (`id`, `hour`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `location`
+-- Table structure for table `location`
 --
 
 CREATE TABLE `location` (
@@ -156,10 +156,10 @@ CREATE TABLE `location` (
   `address` text NOT NULL,
   `schedule` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `location`
+-- Dumping data for table `location`
 --
 
 INSERT INTO `location` (`id`, `name`, `address`, `schedule`, `date`) VALUES
@@ -169,7 +169,7 @@ INSERT INTO `location` (`id`, `name`, `address`, `schedule`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `mech`
+-- Table structure for table `mech`
 --
 
 CREATE TABLE `mech` (
@@ -178,10 +178,10 @@ CREATE TABLE `mech` (
   `id_special` int(11) NOT NULL,
   `id_location` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `mech`
+-- Dumping data for table `mech`
 --
 
 INSERT INTO `mech` (`id`, `name`, `id_special`, `id_location`, `date`) VALUES
@@ -191,7 +191,7 @@ INSERT INTO `mech` (`id`, `name`, `id_special`, `id_location`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `meetings`
+-- Table structure for table `meetings`
 --
 
 CREATE TABLE `meetings` (
@@ -203,10 +203,10 @@ CREATE TABLE `meetings` (
   `id_services` int(11) NOT NULL,
   `id_location` int(11) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `meetings`
+-- Dumping data for table `meetings`
 --
 
 INSERT INTO `meetings` (`id`, `date`, `id_hour`, `id_mech`, `id_users`, `id_services`, `id_location`, `timestamp`) VALUES
@@ -217,16 +217,16 @@ INSERT INTO `meetings` (`id`, `date`, `id_hour`, `id_mech`, `id_users`, `id_serv
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pay`
+-- Table structure for table `pay`
 --
 
 CREATE TABLE `pay` (
   `id` int(11) NOT NULL,
   `method` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `pay`
+-- Dumping data for table `pay`
 --
 
 INSERT INTO `pay` (`id`, `method`) VALUES
@@ -235,16 +235,16 @@ INSERT INTO `pay` (`id`, `method`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `role` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `role`) VALUES
@@ -254,7 +254,7 @@ INSERT INTO `roles` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sales`
+-- Table structure for table `sales`
 --
 
 CREATE TABLE `sales` (
@@ -265,30 +265,44 @@ CREATE TABLE `sales` (
   `id_users` int(11) NOT NULL,
   `id_yates` int(11) NOT NULL,
   `id_accesory` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `sales`
+-- Dumping data for table `sales`
 --
 
 INSERT INTO `sales` (`id`, `date`, `month`, `id_pay`, `id_users`, `id_yates`, `id_accesory`) VALUES
 (6, '2023-09-13 13:51:18', 8, 1, 2, 8, 0),
-(8, '2023-09-13 13:51:18', 8, 1, 2, 0, 6);
+(8, '2023-09-13 13:51:18', 8, 1, 2, 0, 6),
+(9, '2023-09-13 13:51:18', 9, 1, 2, 8, 0),
+(10, '2023-09-13 13:51:18', 9, 1, 2, 0, 6),
+(11, '2023-09-13 13:51:18', 9, 1, 2, 8, 0),
+(12, '2023-09-13 13:51:18', 9, 1, 2, 0, 6),
+(13, '2023-09-13 13:51:18', 10, 1, 2, 8, 0),
+(14, '2023-09-13 13:51:18', 10, 1, 2, 0, 6),
+(15, '2023-09-13 13:51:18', 10, 1, 2, 8, 0),
+(16, '2023-09-13 13:51:18', 11, 1, 2, 0, 6),
+(17, '2023-09-13 13:51:18', 11, 1, 2, 8, 0),
+(18, '2023-09-13 13:51:18', 12, 1, 2, 0, 6),
+(19, '2023-09-13 13:51:18', 12, 1, 2, 8, 0),
+(20, '2023-09-13 13:51:18', 12, 1, 2, 0, 6),
+(21, '2023-09-13 13:51:18', 12, 1, 2, 8, 0),
+(22, '2023-09-13 13:51:18', 12, 1, 2, 0, 6);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `service`
+-- Table structure for table `service`
 --
 
 CREATE TABLE `service` (
   `id` int(11) NOT NULL,
   `service` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `service`
+-- Dumping data for table `service`
 --
 
 INSERT INTO `service` (`id`, `service`, `date`) VALUES
@@ -299,17 +313,17 @@ INSERT INTO `service` (`id`, `service`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `special`
+-- Table structure for table `special`
 --
 
 CREATE TABLE `special` (
   `id` int(11) NOT NULL,
   `special` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `special`
+-- Dumping data for table `special`
 --
 
 INSERT INTO `special` (`id`, `special`, `date`) VALUES
@@ -319,16 +333,16 @@ INSERT INTO `special` (`id`, `special`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `status`
+-- Table structure for table `status`
 --
 
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `status` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `status`
+-- Dumping data for table `status`
 --
 
 INSERT INTO `status` (`id`, `status`) VALUES
@@ -338,7 +352,7 @@ INSERT INTO `status` (`id`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -351,10 +365,10 @@ CREATE TABLE `users` (
   `id_documents` int(11) NOT NULL,
   `id_status` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `mail`, `password`, `document`, `id_roles`, `id_documents`, `id_status`, `date`) VALUES
@@ -366,7 +380,7 @@ INSERT INTO `users` (`id`, `name`, `mail`, `password`, `document`, `id_roles`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `yates`
+-- Table structure for table `yates`
 --
 
 CREATE TABLE `yates` (
@@ -379,10 +393,10 @@ CREATE TABLE `yates` (
   `id_users` int(11) NOT NULL,
   `id_brand` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `yates`
+-- Dumping data for table `yates`
 --
 
 INSERT INTO `yates` (`id`, `model`, `price`, `info`, `serie`, `img`, `id_users`, `id_brand`, `date`) VALUES
@@ -406,41 +420,41 @@ INSERT INTO `yates` (`id`, `model`, `price`, `info`, `serie`, `img`, `id_users`,
 (59, 'Ferretti Yachts 850', 1000, '', '100-10-116', 'https://www.mennyacht.com/wp-content/uploads/2020/01/33048-1900x1069.jpg', 1, 3, '2023-08-31 00:54:25');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `accesories`
+-- Indexes for table `accesories`
 --
 ALTER TABLE `accesories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `brands`
+-- Indexes for table `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `documents`
+-- Indexes for table `documents`
 --
 ALTER TABLE `documents`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `hour`
+-- Indexes for table `hour`
 --
 ALTER TABLE `hour`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `location`
+-- Indexes for table `location`
 --
 ALTER TABLE `location`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `mech`
+-- Indexes for table `mech`
 --
 ALTER TABLE `mech`
   ADD PRIMARY KEY (`id`),
@@ -448,7 +462,7 @@ ALTER TABLE `mech`
   ADD KEY `id_location` (`id_location`);
 
 --
--- Indices de la tabla `meetings`
+-- Indexes for table `meetings`
 --
 ALTER TABLE `meetings`
   ADD PRIMARY KEY (`id`),
@@ -459,19 +473,19 @@ ALTER TABLE `meetings`
   ADD KEY `id_location` (`id_location`) USING BTREE;
 
 --
--- Indices de la tabla `pay`
+-- Indexes for table `pay`
 --
 ALTER TABLE `pay`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `sales`
+-- Indexes for table `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`id`),
@@ -481,25 +495,25 @@ ALTER TABLE `sales`
   ADD KEY `id_accesory` (`id_accesory`);
 
 --
--- Indices de la tabla `service`
+-- Indexes for table `service`
 --
 ALTER TABLE `service`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `special`
+-- Indexes for table `special`
 --
 ALTER TABLE `special`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `status`
+-- Indexes for table `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -508,7 +522,7 @@ ALTER TABLE `users`
   ADD KEY `id_status` (`id_status`);
 
 --
--- Indices de la tabla `yates`
+-- Indexes for table `yates`
 --
 ALTER TABLE `yates`
   ADD PRIMARY KEY (`id`),
@@ -516,17 +530,23 @@ ALTER TABLE `yates`
   ADD KEY `id_brand` (`id_brand`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `meetings`
+-- AUTO_INCREMENT for table `meetings`
 --
 ALTER TABLE `meetings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de la tabla `yates`
+-- AUTO_INCREMENT for table `sales`
+--
+ALTER TABLE `sales`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `yates`
 --
 ALTER TABLE `yates`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;

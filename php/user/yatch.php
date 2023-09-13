@@ -45,8 +45,9 @@
     );
 
     $accesories = 0;
+    $month = date('m');
     
-    $sql2 = "INSERT INTO sales(id_users, id_yates, id_pay, id_accesory) VALUES ('$client','$Yid','$pay','$accesories')";
+    $sql2 = "INSERT INTO sales(id_users, id_yates, id_pay, id_accesory,month) VALUES ('$client','$Yid','$pay','$accesories','$month')";
 
     //echo $sql;
 

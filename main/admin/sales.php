@@ -36,6 +36,25 @@
       window.location = '../../main/user/index.php';
       </script>";*/
     }
+    $sales = new sales();
+      $sql7 = $sales->month7();
+      $query7= mysqli_query($cone ,$sql7);
+      $result7 = mysqli_fetch_assoc($query7);
+      $sql8 = $sales->month8();
+      $query8= mysqli_query($cone ,$sql8);
+      $result8 = mysqli_fetch_assoc($query8);
+      $sql9 = $sales->month9();
+      $query9= mysqli_query($cone ,$sql9);
+      $result9 = mysqli_fetch_assoc($query9);
+      $sql10 = $sales->month10();
+      $query10= mysqli_query($cone ,$sql10);
+      $result10 = mysqli_fetch_assoc($query10);
+      $sql11 = $sales->month11();
+      $query11= mysqli_query($cone ,$sql11);
+      $result11 = mysqli_fetch_assoc($query11);
+      $sql12 = $sales->month12();
+      $query12= mysqli_query($cone ,$sql12);
+      $result12 = mysqli_fetch_assoc($query12);
 ?>
 
 
@@ -87,12 +106,15 @@
         <a href="./special.php"><button class="btn btn-secondary">Especialidades</button></a>
     <section class="Catalog">  
     <h4>Ventas</h4>
+    <div class="card text-start">
     <div class="card-body">
-    <div class="text-center mx-3 w-25 h-25 bg-successs rounded border-3">
-    <h2>Gráfico de barras sobre las ventas</h2>
-    <canvas id="myChart"></canvas>
+        <div class="text-center rounded border-3 p-3">
+            <h2>Gráfico de barras sobre las ventas</h2>
+            <canvas id="myChart" width="400" height="100"></canvas> <!-- Adjusted height -->
+        </div>
     </div>
-    </div>
+</div><br>
+
 
     <div class="card text-start">
         <div class="card-body">
@@ -178,7 +200,29 @@
   <footer>
   </footer>
   <script src="https://kit.fontawesome.com/0bf8ac12b9.js" crossorigin="anonymous"></script> <!--Link de conexión íconos-->
-  <script src="../../scripts/graphic.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    datasets: [{
+      label: 'Ventas por mes',
+      data: [<?php
+      echo $result7['count'].",".$result8['count'].",".$result9['count'].",".$result10['count'].",".$result11['count'].",".$result12['count']."," ?>],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+  </script>
 
 </body>
 </html>
