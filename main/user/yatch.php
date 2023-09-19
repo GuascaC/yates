@@ -55,13 +55,16 @@
 <body>
 <header class="d-flex w-100">
       <!--encabezado redes sociales-->
-      <div class="text-white w-25 icons">
+      <div class="text-white icons">
         <a onclick=""><i class="fa-brands fa-whatsapp"></i></a>
         <a onclick=""><i class="fa-brands fa-instagram"></i></a>
         <a onclick=""><i class="fa-brands fa-facebook-f"></i></a>
         <a onclick=""><i class="fa-brands fa-twitter"></i></a>
       </div>
-        <div class="dropdown">
+      <div class="w-75 me-5">
+        <h1>AdrenaMarine</h1>
+      </div>
+        <div class="dropdown ms-5">
           <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           <?php echo $result['name'] ?>
           </button>
@@ -70,10 +73,7 @@
           <li><a class="dropdown-item" href="../../php/logout.php">Cerrar sesión</a></li>
         </ul>
         </div>
-      <div class="w-50">
-        <h1>AdrenaMarine</h1>
-      </div>
-  </header>
+</header>
   <main>
     <a href="./index.php"><button class="btn btn-outline-danger" id=""><i class="fa-solid fa-arrow-left px-3 justify-content-center"></button></i></a>
     <a href="./user.php"><button class="btn btn-secondary">Tu información</button></a>
