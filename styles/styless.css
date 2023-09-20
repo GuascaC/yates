@@ -17,6 +17,9 @@ h1{
   margin: 0 !important; 
   line-height: 0.8;
 }
+.icons{
+  width: 25%;
+}
 .icons i{
   font-size: 17px;
   margin-right: 1vw;
@@ -86,7 +89,8 @@ width: 20vw;
 header div h1{
   text-align: left;
 }
-.btn-primary{
+.btn-primary, .btn-primary:hover,
+.btn-primary:focus{
   background: #660D1F;
   border-color: #660D1F;
 }
