@@ -109,7 +109,7 @@
     <div class="card text-start">
     <div class="card-body">
         <div class="text-center rounded border-3 p-3">
-            <h2>Gráfico de barras sobre las ventas</h2>
+            <h2>Gráfico de Barras Sobre Las Ventas</h2>
             <canvas id="myChart" width="400" height="100"></canvas> <!-- Adjusted height -->
         </div>
     </div>
