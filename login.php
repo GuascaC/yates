@@ -103,7 +103,7 @@
   <!--footer-->
   <footer>
   </footer>
-  <script src="https://kit.fontawesome.com/0bf8ac12b9.js" crossorigin="anonymous"></script> <!--Linki de conexión íconos-->
+  <script src="https://kit.fontawesome.com/0bf8ac12b9.js" crossorigin="anonymous"></script> <!--Link de conexión íconos-->
   <script src="./scripts/main.js"></script>
 </body>
 </html>

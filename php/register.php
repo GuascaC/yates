@@ -8,8 +8,8 @@
         $_POST['name'],
         $_POST['doc'],
         $_POST['t_doc'],
-        $_POST['mail'],
-        $padssword = md5($_POST['password']),
+        $email = $_POST['mail'],
+        $password = md5($_POST['password']),
         1,
         0
     );
@@ -24,7 +24,8 @@
     
             $query = mysqli_query($cone,$sql);
 
-            if ($query > 0) {
+            if (mysqli_num_rows ($query) > 0) {
+                //echo $sql;
                 echo"<script>
                 window.alert('Correo ya registrado');
                 window.location = '../login.php';
@@ -37,7 +38,8 @@
         
                 $query = mysqli_query($cone,$sql);
 
-                if ($query > 0) {
+                if (mysqli_num_rows ($query) > 0) {
+                    //echo $sql;
                     echo"<script>
                     window.alert('Usuario Desactivado, contactese con un administrador');
                     window.location = '../register.php';
